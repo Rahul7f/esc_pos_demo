@@ -44,7 +44,7 @@ dependencies:
 
   pdf:
   printing:
-  image: ^3.3.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

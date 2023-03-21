@@ -1,4 +1,4 @@
-import 'dart:convert';
+
 import 'dart:typed_data';
 
 import 'package:esc_pos_utils/esc_pos_utils.dart';
@@ -7,11 +7,12 @@ import 'package:flutter/material.dart';
 import 'package:esc_pos_printer/esc_pos_printer.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_usb_printer/flutter_usb_printer.dart';
-import 'package:image/image.dart';
 import 'package:image/src/image.dart';
+// import 'dart:io';
+// import 'package:image/image.dart' as img;
+import 'package:image/image.dart' as img; // add a prefix to the image package
 
-import 'dart:io';
-import 'package:image/image.dart' as img;
+
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -49,11 +50,12 @@ class _HomePageState extends State<HomePage> {
 }
 
 Future<void> testReceipt(NetworkPrinter printer) async {
-  printer.text('Hi Rahul',
-      styles: const PosStyles(
-        height: PosTextSize.size2,
-        width: PosTextSize.size2,
-      ));
+  printer.text("text");
+  // final ByteData data = await rootBundle.load('images/delete.png');
+  // final Uint8List bytes = data.buffer.asUint8List();
+  // final img.Image? image = img.decodeImage(bytes);
+  // final img.Image resizedImage = img.copyResize(image!, width: image.width ~/ 2, height: image.height ~/ 2);
+  // printer.image(resizedImage);
   printer.feed(2);
   printer.cut();
 }
